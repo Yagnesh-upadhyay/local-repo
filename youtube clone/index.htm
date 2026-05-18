@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="header__left">
+            <span class="material-icons menu-icon" id="menu-btn">menu</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo"
+                class="header__logo">
+        </div>
+
+        <div class="header__middle">
+            <form class="search-form" id="search-form">
+                <input type="text" placeholder="Search" class="search-input">
+                <button type="submit" class="search-btn">
+                    <span class="material-icons">search</span>
+                </button>
+            </form>
+            <span class="material-icons mic-icon">mic</span>
+        </div>
+
+        <div class="header__right">
+            <span class="material-icons">video_call</span>
+            <span class="material-icons">notifications</span>
+            <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff" alt="Profile"
+                class="profile-icon">
+        </div>
+    </header>
+
+    <div class="app-body">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar__nav">
+                <a href="#" class="nav-item active"><span class="material-icons">home</span>Home</a>
+                <a href="#" class="nav-item"><span class="material-icons">explore</span>Explore</a>
+                <a href="#" class="nav-item"><span class="material-icons">subscriptions</span>Subscriptions</a>
+                <hr>
+                <a href="#" class="nav-item"><span class="material-icons">video_library</span>Library</a>
+                <a href="#" class="nav-item"><span class="material-icons">history</span>History</a>
+                <a href="#" class="nav-item"><span class="material-icons">smart_display</span>Your Videos</a>
+                <a href="#" class="nav-item"><span class="material-icons">watch_later</span>Watch Later</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Categories -->
+            <div class="categories" id="categories-container">
+                <!-- Categories injected via JS -->
+            </div>
+
+            <!-- Video Grid -->
+            <div class="video-grid" id="video-grid">
+                <!-- Videos injected via JS -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

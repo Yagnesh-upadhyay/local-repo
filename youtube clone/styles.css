@@ -1,0 +1,280 @@
+:root {
+    --bg-color: #0f0f0f;
+    --text-color: #ffffff;
+    --text-secondary: #aaaaaa;
+    --border-color: #303030;
+    --hover-color: #272727;
+    --search-bg: #121212;
+    --brand-color: #ff0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__logo {
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.header__middle {
+    display: flex;
+    align-items: center;
+    flex: 0.6;
+    max-width: 600px;
+}
+
+.search-form {
+    display: flex;
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: var(--search-bg);
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-btn {
+    background-color: var(--hover-color);
+    border: none;
+    border-left: 1px solid var(--border-color);
+    padding: 0 20px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.mic-icon {
+    margin-left: 15px;
+    background-color: var(--hover-color);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-icon {
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* App Body Layout */
+.app-body {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    padding-top: 10px;
+    background-color: var(--bg-color);
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 72px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    gap: 20px;
+}
+
+.nav-item:hover {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+.nav-item.active {
+    background-color: var(--hover-color);
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 15px 0;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    background-color: var(--bg-color);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Category Chips */
+.categories {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.category-chip {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.category-chip.active,
+.category-chip:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    row-gap: 40px;
+}
+
+.video-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.video-card:hover .video-thumbnail-img {
+    border-radius: 0;
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.video-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: border-radius 0.2s;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.video-info {
+    display: flex;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-meta,
+.channel-name {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.channel-name:hover {
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .header__middle {
+        display: none;
+    }
+}
